@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <form action="{% url 'search' %}" method="get" class="form-actions">
+                    <input type="search" placeholder="enter parameters" name="search_value"></in>
+                    <button type="submit" class="btn-md btn-outline-danger">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

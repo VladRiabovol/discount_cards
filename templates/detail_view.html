@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+    <table class="text-center table">
+        <thead><h5>Profile of discount card:</h5></thead>
+            <tr>
+                <th>id</th>
+                <th>series</th>
+                <th>number</th>
+                <th>create date</th>
+                <th>end of activity</th>
+                <th>date of use</th>
+                <th>total </th>
+                <th>status</th>
+            </tr>
+            <tr>
+                <td>{{ cards_list.0.card.id }}</td>
+                <td>{{ cards_list.0.card.series }}</td>
+                <td>{{ cards_list.0.card.number }}</td>
+                <td>{{ cards_list.0.card.create_date }}</td>
+                <td>{{ cards_list.0.card.end_of_activity }}</td>
+                <td>{{ cards_list.0.card.date_of_use }}</td>
+                <td>{{ cards_list.0.card.total_sum }}</td>
+                <td> {{ cards_list.0.card.status }}</td>
+
+
+            </tr>
+    </table>
+    <h6 class="text-center">Sales:</h6>
+     {% for item in cards_list %}
+        <div class="text-center">{{ item }}</div>
+    {% endfor %}
+
+{% endblock %}

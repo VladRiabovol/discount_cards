@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+    <table class="text-center table">
+        <thead><h5 class="text-center">List of discount cards:</h5></thead>
+        <tbody>
+            <tr>
+                <th>id</th>
+                <th>series</th>
+                <th>number</th>
+                <th>end of activity</th>
+                <th>status</th>
+            </tr>
+        {% for card in cards_list %}
+            <tr>
+                <td>
+                    {{ card.id }}
+                    <button>
+                        <a href="{% url 'card-detail' card.id %}">profile</a>
+                    </button>
+                </td>
+                <td>{{ card.series }}</td>
+                <td>{{ card.number }}</td>
+                <td>{{ card.end_of_activity}}</td>
+                <td>{{ card.status }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container-fluid">
+        <h5>Change status of card:</h5>
+        <form method="post" class="form1"> {%  csrf_token %}
+            <ol>
+                <li>
+                    Enter id of card:
+                    {{ form_change_status.id }}
+                </li>
+                {{ change_status.status.label }}
+                <li>
+                    Choose change status: <br>
+                    enable:{{ form_change_status.enabled }} disable:{{ form_change_status.disabled }}
+                </li>
+                <button type="submit" class="btn-md btn-outline-danger">change</button>
+            </ol>
+        </form>
+    </div>
+{% endblock %}
